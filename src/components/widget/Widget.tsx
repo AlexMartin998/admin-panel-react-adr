@@ -3,29 +3,55 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
-import './widget.scss';
 
-interface WidgetData {
-  title: string;
-  isMoney?: boolean;
-  linkLabel?: string;
-  icon?: JSX.Element;
-}
+import './widget.scss';
+import { WidgetData, widgetPropsType } from './interfaces';
 
 interface WidgetProps {
-  type: 'user' | 'widgets' | 'user' | 'order' | 'erarning' | 'balance';
+  type: widgetPropsType;
 }
 
 const Widget = ({ type }: WidgetProps) => {
-  let widgetData: WidgetData;
+  let widgetData: WidgetData = { title: '' };
+
+  // Temporary
+  const amount = 100;
+  const diff = 20;
 
   switch (type) {
     case 'user':
       widgetData = {
-        title: '',
+        title: 'USERS',
         isMoney: false,
         linkLabel: 'See all users',
-        icon: <PersonOutlinedIcon />,
+        icon: <PersonOutlinedIcon className="icon user" />,
+      };
+      break;
+
+    case 'order':
+      widgetData = {
+        title: 'ORDERS',
+        isMoney: false,
+        linkLabel: 'View all orders',
+        icon: <ShoppingCartOutlinedIcon className="icon order" />,
+      };
+      break;
+
+    case 'earning':
+      widgetData = {
+        title: 'EARNING',
+        isMoney: true,
+        linkLabel: 'View net earnings',
+        icon: <MonetizationOnOutlinedIcon className="icon earning" />,
+      };
+      break;
+
+    case 'balance':
+      widgetData = {
+        title: 'BALANCE',
+        isMoney: true,
+        linkLabel: 'See details',
+        icon: <AccountBalanceWalletOutlinedIcon className="icon balance" />,
       };
       break;
 
@@ -36,17 +62,19 @@ const Widget = ({ type }: WidgetProps) => {
   return (
     <div className="widget">
       <div className="left">
-        <span className="title">USERS</span>
-        <span className="counter">121212</span>
-        <span className="link">See all users</span>
+        <span className="title">{widgetData.title}</span>
+        <span className="counter">
+          {widgetData.isMoney && '$'} {amount}
+        </span>
+        <span className="link">{widgetData.linkLabel}</span>
       </div>
 
       <div className="right">
         <div className="percentage positive">
           <KeyboardArrowUpIcon />
-          20%
+          {diff}%
         </div>
-        <PersonOutlinedIcon className="icon" />
+        {widgetData.icon}
       </div>
     </div>
   );

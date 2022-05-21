@@ -50,6 +50,23 @@
       padding: 5px;
       border-radius: 5px;
       align-self: flex-end;
+
+      &.user {
+        color: crimson;
+        background-color: rgba(255, 0, 0, 0.2);
+      }
+      &.order {
+        background-color: rgba(218, 165, 32, 0.2);
+        color: goldenrod;
+      }
+      &.earning {
+        background-color: rgba(0, 128, 0, 0.2);
+        color: green;
+      }
+      &.balance {
+        background-color: rgba(128, 0, 128, 0.2);
+        color: purple;
+      }
     }
   }
 }
