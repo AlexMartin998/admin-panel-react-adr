@@ -19,7 +19,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="top">
         <NavLink to="/" style={{ textDecoration: 'none' }}>
-          <span className="logo">lamadmin</span>
+          <span className="logo">adradmin</span>
         </NavLink>
       </div>
       
