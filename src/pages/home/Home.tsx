@@ -2,6 +2,7 @@ import Chart from '../../components/chart/Chart';
 import Featured from '../../components/featured/Featured';
 import Navbar from '../../components/navbar/Navbar';
 import Sidebar from '../../components/sidebar/Sidebar';
+import TableList from '../../components/table/Table';
 import Widget from '../../components/widget/Widget';
 
 import './home.scss';
@@ -23,6 +24,12 @@ export const Home = () => {
         <div className="charts">
           <Featured />
           <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
+        </div>
+
+        {/* MUI */}
+        <div className="listContainer">
+          <div className="listTitle">Latest transactions</div>
+          <TableList />
         </div>
       </div>
     </div>
