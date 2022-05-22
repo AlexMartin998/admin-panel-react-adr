@@ -1,5 +1,7 @@
+import Chart from '../../components/chart/Chart';
 import Navbar from '../../components/navbar/Navbar';
 import Sidebar from '../../components/sidebar/Sidebar';
+import TableList from '../../components/table/Table';
 
 import './single.scss';
 
@@ -60,10 +62,15 @@ export const Single = () => {
             </div>
           </div>
 
-          <div className="right">Right</div>
+          <div className="right">
+            <Chart title="User Spending (Last 6 Months)" aspect={3 / 1} />
+          </div>
         </div>
 
-        <div className="bottom"></div>
+        <div className="bottom">
+          <h1 className="title">Last Transations</h1>
+          <TableList />
+        </div>
       </div>
     </div>
   );
