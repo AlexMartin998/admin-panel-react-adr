@@ -36,7 +36,7 @@ export const Single = () => {
                 <div className="detailItem">
                   <span className="itemKey">Phone: </span>
                   <a
-                    href="mailto:recipient@email.com"
+                    href="tel:+593 999 999 9999"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
