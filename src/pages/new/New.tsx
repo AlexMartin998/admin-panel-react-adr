@@ -12,12 +12,12 @@ interface NewProps {
   title: string;
 }
 
+// public:
+const noImg = '/assets/no-image-icon-0.jpg';
+
 // TODO: Dynamic Form
 export const New = ({ inputs, title }: NewProps) => {
   const [file, setFile] = useState<File>();
-
-  const noImgUrl =
-    'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg';
 
   const handleFile = (e: ChangeEvent<HTMLInputElement>) => {
     setFile(e.target.files?.[0]);
@@ -36,10 +36,7 @@ export const New = ({ inputs, title }: NewProps) => {
 
         <div className="bottom">
           <div className="left">
-            <img
-              src={file ? URL.createObjectURL(file) : noImgUrl}
-              alt="image"
-            />
+            <img src={file ? URL.createObjectURL(file) : noImg} alt="image" />
           </div>
           <div className="right">
             <form>
