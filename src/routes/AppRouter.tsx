@@ -15,7 +15,7 @@ export const AppRouter = () => {
   const { darkMode } = useDarkMode();
 
   return (
-    <div className={`app ${darkMode && 'dark'}`}>
+    <div className={`app ${(darkMode && 'dark') || ''}`}>
       <BrowserRouter>
         <Routes>
           <Route path="/">
