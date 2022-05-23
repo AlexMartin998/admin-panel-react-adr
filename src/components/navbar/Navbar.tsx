@@ -7,8 +7,11 @@ import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutline
 import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 
 import './navbar.scss';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 const Navbar = () => {
+  const { toggleDarkMode } = useDarkMode();
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -22,7 +25,11 @@ const Navbar = () => {
             <LanguageIcon className="icon" />
             <span>English</span>
           </div>
-          <div className="item">
+          <div
+            className="item"
+            onClick={() => toggleDarkMode()}
+            style={{ cursor: 'pointer' }}
+          >
             <DarkModeOutlinedIcon className="icon" />
           </div>
           <div className="item">

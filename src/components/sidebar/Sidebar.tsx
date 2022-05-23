@@ -13,8 +13,11 @@ import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSyst
 import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { NavLink } from 'react-router-dom';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 const Sidebar = () => {
+  const { setDarkMode, setLightMode } = useDarkMode();
+
   const isActiveFx = ({ isActive }: { isActive: boolean }): string =>
     isActive ? 'nav-active' : '';
 
@@ -107,8 +110,8 @@ const Sidebar = () => {
       </div>
 
       <div className="bottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div className="colorOption" onClick={() => setLightMode()}></div>
+        <div className="colorOption" onClick={() => setDarkMode()}></div>
       </div>
     </div>
   );
