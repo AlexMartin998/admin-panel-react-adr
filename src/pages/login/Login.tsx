@@ -1,7 +1,10 @@
-import React from 'react'
 
 export const Login = () => {
   return (
-    <div>Login</div>
-  )
-}
+    <div className="login">
+
+      <div className="newContainer">
+      </div>
+    </div>
+  );
+};
